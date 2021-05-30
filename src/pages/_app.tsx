@@ -3,16 +3,19 @@ import '../styles/global.scss'
 import { Header } from '../components/Header';
 import { Player } from '../components/Player';
 import styles from '../styles/app.module.scss'
+import { PlayerContext } from '../contexts/PlayerContext';
 
 function MyApp({ Component, pageProps }) {
-  return(
+  return (
+    <PlayerContext.Provider value={"Diego"}>
     <div className={styles.wrapper}>
       <main>
-      <Header/>
-      <Component {...pageProps} />
+        <Header />
+        <Component {...pageProps} />
       </main>
-      <Player/>
+      <Player />
     </div>
+    </PlayerContext.Provider>
   );
 }
 
