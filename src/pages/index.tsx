@@ -6,6 +6,7 @@ import { format, parseISO } from "date-fns";
 
 import { GetStaticProps } from "next";
 import Image from "next/image";
+import Head from "next/head";
 import Link from "next/link";
 //import {useEffect} from 'react'
 import { api } from "./../services/api";
@@ -42,6 +43,13 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
 
   return (
     <div className={styles.homepage}>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter&family=Lexend:wght@500;600&display=swap"
+          rel="stylesheet"
+        />
+        <title>Home | Podcastr</title>
+      </Head>
       <section className={styles.latestEpisodes}>
         <h2>Ultimos lançamentos</h2>
 
